@@ -1,5 +1,5 @@
 {% set name = "pygments-style-solarized" %}
-{% set version = "0.2.0" %}
+{% set version = "100.10.7" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pygments-style-solarized-{{ version }}.tar.gz
-  sha256: 4867d8903d8d065c42ed37219eb5e13a6e091f11f1b3cd4f9fab016ec737b97a
+  sha256: bd51d216368549de3bf45c63f0ef2aff3efdea5accce0ea2b4a434e7fbdd7414
 
 build:
   number: 0
