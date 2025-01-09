@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pygments-style-solarized-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pygments-style-solarized-{{ version }}.tar.gz
   sha256: 4867d8903d8d065c42ed37219eb5e13a6e091f11f1b3cd4f9fab016ec737b97a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6,<4.0
+    - python {{ python_min }}
     - poetry >=1,<2
   run:
     - pygments >=1.5
-    - python >=3.6,<4.0
+    - python >={{ python_min }},<4.0
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/shkumagai/pygments-style-solarized
